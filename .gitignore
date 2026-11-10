@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.exe
+*.dll
+*.sys
+*.bin
+*.pem
+*.i64
+*.idb
+samples/
