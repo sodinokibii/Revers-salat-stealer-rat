@@ -34,6 +34,7 @@ pip install -r requirements.txt
 python -m salatkit.unpack_loader DiscordFix.exe stage2.bin
 python -m salatkit.config_keys stage2.bin --out-certs certs.pem
 python -m salatkit.endpoints stage2.bin
+python -m salatkit.indicators stage2.bin
 ```
 
 Параметры (адреса таблиц, константы) подходят к сэмплу `83d2faf5...ec1a`. Для другого сэмпла добавьте `LoaderParams` в `KNOWN_SAMPLES` и поправьте адреса в `config_keys.py` и `endpoints.py`.
@@ -53,4 +54,5 @@ python -m salatkit.endpoints stage2.bin
 - Третья стадия (`Staem.exe` с GitHub) не скачивалась.
 - Назначение строки `github apple` не выяснено.
 
-IOC в файле [IOC.md](IOC.md).
+Разбор кражи данных с псевдокодом: [STEALING.md](STEALING.md).
+Хеши файлов (MD5, SHA-1, SHA-256), адреса и сертификат: [IOC.md](IOC.md).

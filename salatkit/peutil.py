@@ -55,6 +55,12 @@ class PeImage:
                 return sec.raw_off + (rva - sec.rva)
         raise ValueError(f"address 0x{va:X} is outside sections")
 
+    def va_of_offset(self, offset: int) -> int:
+        for sec in self.sections:
+            if sec.raw_off <= offset < sec.raw_off + sec.raw_size:
+                return self.image_base + sec.rva + (offset - sec.raw_off)
+        raise ValueError(f"offset 0x{offset:X} is outside sections")
+
     def read(self, va: int, size: int) -> bytes:
         off = self.offset_of(va)
         return self.data[off:off + size]
